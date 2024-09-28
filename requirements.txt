@@ -3,4 +3,5 @@ Pillow
 torch==2.4.0 
 timm
 einops
+transformers 
 supervision==0.22.0rc1
