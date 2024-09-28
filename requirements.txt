@@ -2,3 +2,5 @@ streamlit
 Pillow
 torch
 transformers
+timm
+einops
