@@ -2,3 +2,8 @@
 __pycache__/*
 pages/__pycache__
 inference/__pycache__
+inference/__pycache__/__init__.cpython-310.pyc
+inference/__pycache__/inference_utils.cpython-310.pyc
+pages/__pycache__/__init__.cpython-310.pyc
+pages/__pycache__/image_captioning.cpython-310.pyc
+pages/__pycache__/vqa.cpython-310.pyc
