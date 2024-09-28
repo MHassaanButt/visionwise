@@ -4,8 +4,8 @@ from transformers import AutoModelForCausalLM, AutoProcessor
 
 # Model loading
 CHECKPOINT = "microsoft/Florence-2-large-ft"
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE = "cpu"
 model = AutoModelForCausalLM.from_pretrained(CHECKPOINT, trust_remote_code=True).to(
     DEVICE
 )
