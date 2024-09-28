@@ -1,6 +1,6 @@
 streamlit
 Pillow
-torch
+torch-cpu
 transformers
 timm
 einops

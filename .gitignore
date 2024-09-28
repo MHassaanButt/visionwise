@@ -1,0 +1,4 @@
+*.pyc
+__pycache__/*
+pages/__pycache__
+inference/__pycache__
