@@ -2,6 +2,7 @@ import streamlit as st
 from pages.image_captioning import image_captioning_page
 from pages.vqa import vqa_page
 from pages.object_detection import obj_detection_page
+from pages.ocr import ocr_page
 # Unique name for the app
 APP_NAME = "VisionWise"
 
@@ -48,7 +49,7 @@ st.markdown(
     .footer a {
         margin: 5px 0; /* Space between links */
         text-decoration: none;
-        color: #007bff; /* Color for links */
+        color: #ffffff; /* Color for links */
         display: block; /* Each link on a new line */
     }
     .footer img {
@@ -82,7 +83,8 @@ def main():
         [
             "Image Captioning",
             "Visual Question Answering",
-            "Object Detection"
+            "Object Detection",
+            "Optical Character Recognition",
         ],
         index=0,  # Set default option
     )
@@ -93,6 +95,8 @@ def main():
         vqa_page()
     elif page == "Object Detection":
         obj_detection_page()
+    elif page == "Optical Character Recognition":
+        ocr_page()
 
     # Footnote with social links and icons
     st.sidebar.markdown(

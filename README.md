@@ -5,9 +5,22 @@
 
 ## Features
 - **Image Captioning:** Generate descriptive captions for uploaded images using state-of-the-art models.
+  - **Region Captioning:** Generate detailed captions for specific regions within the image.
+  
 - **Visual Question Answering (VQA):** Ask questions about uploaded images and receive detailed answers based on visual content.
-- **Object Detection:** Capable for Object Detection task on image.
+  
+- **Object Detection:** Detect objects in images with three distinct methods:
+  - **Simple Object Detection:** Identify and classify standard objects in the image.
+  - **Open Vocabulary Object Detection:** Detect objects beyond the training categories using open-vocabulary models.
+  - **Region Proposal Detection:** Identify regions of interest and propose objects present in those regions.
+  
+- **Optical Character Recognition (OCR):** Extract and display text from images.
+  - **Image OCR:** Retrieve text from printed or typed content within an image.
+  - **Region OCR:** Extract text from specific regions of an image.
+  - **Handwriting OCR:** Capable of reading handwritten text, making it suitable for scanned documents or handwritten notes.
+  
 - **User-friendly Navigation:** Easy-to-use interface with a navigation bar for seamless feature access.
+
 
 ## Technologies Used
 - **Backend:**

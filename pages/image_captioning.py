@@ -40,6 +40,7 @@ def image_captioning_page():
 
         elif task_option == "Advanced Captioning":
             advance_caption_types = {
+                "Dense Region Caption" : "<DENSE_REGION_CAPTION>",
                 "Grounded Phrase": "<CAPTION_TO_PHRASE_GROUNDING>",
                 "Grounded Phrase with More Detailed Caption": "<DETAILED_CAPTION> + <CAPTION_TO_PHRASE_GROUNDING>",
             }
@@ -66,8 +67,30 @@ def image_captioning_page():
 
             if st.button("Submit"):
                 # st.write(f"Running {selected_task} task...")
+                if (
+                    selected_task
+                    == "<DENSE_REGION_CAPTION>"
+                ):
+                    # First run the detailed caption task
+                    task = "<DENSE_REGION_CAPTION>"
 
-                if selected_task == "<CAPTION_TO_PHRASE_GROUNDING>":
+                    response = run_inference(image=image, task=task)
+                    detections = sv.Detections.from_lmm(sv.LMM.FLORENCE_2, response, resolution_wh=image.size)
+
+                    bounding_box_annotator = sv.BoundingBoxAnnotator(color_lookup=sv.ColorLookup.INDEX)
+                    label_annotator = sv.LabelAnnotator(color_lookup=sv.ColorLookup.INDEX)
+
+                    image = bounding_box_annotator.annotate(image, detections)
+                    image = label_annotator.annotate(image, detections)
+                    image.thumbnail((600, 600))
+
+                    st.image(
+                        image,
+                        caption="Dense Region Caption Result",
+                        use_column_width=True,
+                    )
+
+                elif selected_task == "<CAPTION_TO_PHRASE_GROUNDING>":
                     response = run_inference(
                         image=image, task=selected_task, text=user_text
                     )
