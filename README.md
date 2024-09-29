@@ -6,6 +6,7 @@
 ## Features
 - **Image Captioning:** Generate descriptive captions for uploaded images using state-of-the-art models.
 - **Visual Question Answering (VQA):** Ask questions about uploaded images and receive detailed answers based on visual content.
+- **Object Detection:** Capable for Object Detection task on image.
 - **User-friendly Navigation:** Easy-to-use interface with a navigation bar for seamless feature access.
 
 ## Technologies Used
