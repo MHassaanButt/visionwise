@@ -3,15 +3,17 @@ from PIL import Image
 from transformers import AutoModelForCausalLM, AutoProcessor
 
 # Model loading
-CHECKPOINT = "microsoft/Florence-2-large-ft"
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+def model_load():
+    CHECKPOINT = "microsoft/Florence-2-large-ft"
+    DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-model = AutoModelForCausalLM.from_pretrained(CHECKPOINT, trust_remote_code=True).to(
-    DEVICE
-)
-processor = AutoProcessor.from_pretrained(CHECKPOINT, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(CHECKPOINT, trust_remote_code=True).to(
+        DEVICE
+    )
+    processor = AutoProcessor.from_pretrained(CHECKPOINT, trust_remote_code=True)
+    return DEVICE, model, processor
 
-
+DEVICE, model, processor = model_load()
 # Inference function for image captioning
 def run_inference(image: Image, task: str, text: str = ""):
     prompt = task + text

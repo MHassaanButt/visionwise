@@ -1,7 +1,7 @@
 import streamlit as st
 from pages.image_captioning import image_captioning_page
 from pages.vqa import vqa_page
-
+from pages.object_detection import obj_detection_page
 # Unique name for the app
 APP_NAME = "VisionWise"
 
@@ -82,6 +82,7 @@ def main():
         [
             "Image Captioning",
             "Visual Question Answering",
+            "Object Detection"
         ],
         index=0,  # Set default option
     )
@@ -90,6 +91,8 @@ def main():
         image_captioning_page()
     elif page == "Visual Question Answering":
         vqa_page()
+    elif page == "Object Detection":
+        obj_detection_page()
 
     # Footnote with social links and icons
     st.sidebar.markdown(
