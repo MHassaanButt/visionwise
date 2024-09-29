@@ -50,9 +50,6 @@ To run the project locally, follow these steps:
 2. Select a feature from the navigation bar: **Image Captioning** or **Visual Question Answering**.
 3. Upload an image and interact with the app by either generating captions or asking questions.
 
-## Streamlit Live Link
-You can access the live version of the app [here](http://your-streamlit-app-link).
-
 ## To-Do List
 - [ ] Fine-tune models for improved performance
 - [ ] Implement Clip model for enhanced image-text understanding
