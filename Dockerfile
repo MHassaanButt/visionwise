@@ -1,14 +1,15 @@
-FROM python:3.9-slim
+FROM python:3.10.0-slim
 
 RUN mkdir /app
 
-COPY * /app/
-
 WORKDIR /app
 
-RUN conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+COPY . /app/
+
+RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "app.py"]
+EXPOSE 8501
 
+CMD ["streamlit", "run", "app.py"]
