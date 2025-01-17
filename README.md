@@ -37,24 +37,41 @@
 
 To run the project locally, follow these steps:
 
+### Using Docker (Recommended)
+
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/MHassaanButt/visionwise.git
    cd visionwise
    ```
 
-2. Set Up a Virtual Environment:
+2. **Build and Run the Docker Container:**
+    ```
+    docker-compose up --build
+    ```
+3. **Access the Application:**
+   Open your browser and navigate to `http://localhost:8501`.
+
+### Using Virtual Environment
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/MHassaanButt/visionwise.git
+   cd visionwise
+   ```
+
+2. **Set Up a Virtual Environment:**
    ```
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
-3. Install Dependencies:
+3. **Install Dependencies:**
    ```
     pip install -r requirements.txt
    ```
    
-4. Run the Streamlit App:
+4. **Run the Streamlit App:**
    ```
    streamlit run app.py
    ```

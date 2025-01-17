@@ -1,6 +1,6 @@
 streamlit
 Pillow
-torch==2.4.0 
+# torch==2.4.0+cpu 
 timm
 einops
 transformers 
